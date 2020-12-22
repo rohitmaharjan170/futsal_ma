@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master_index');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-// rohit intial push
+Route::get('/player', 'HomeController@player_dashboard')->name('home');

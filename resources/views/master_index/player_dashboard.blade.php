@@ -1,11 +1,24 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+ 
+@extends('master_index.partials.header')
+@section('title','Player Dashboard')
 
-@section('content')
+<body>
+
+
+@include('master_index.partials.navbar')
+
+
+
+@extends('master_index.partials.body')
+
+@section('content1')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Player Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,10 +27,20 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are Player!') }}
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+
+
+
+</body>
+</html>
+
+    
+
+
