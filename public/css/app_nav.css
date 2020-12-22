@@ -83,6 +83,12 @@ nav .navlink a{
 		text-decoration: none;
 		font-weight: bold;
 	}
+
+
+nav .dropdown-menu {
+		background-color: black;
+	}
+
 	.burger{
 		display: block;
 	}

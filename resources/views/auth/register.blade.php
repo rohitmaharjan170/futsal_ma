@@ -1,6 +1,9 @@
-@extends('layouts.app')
+@include('master_index.partials.header')
+@include('master_index.partials.navbar')
 
-@section('content')
+@extends('master_index.partials.body')
+
+@section('content1')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

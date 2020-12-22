@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('master_index/index');
     }
+
+    public function player_dashboard()
+    {
+        return view('master_index/player_dashboard');
+    }
 }
