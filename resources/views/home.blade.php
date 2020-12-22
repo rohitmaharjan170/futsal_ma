@@ -1,4 +1,4 @@
-@extends('master_partial.navbar')
+@extends('master_index.partials.navbar')
 
 @section('content')
 <div class="container">
