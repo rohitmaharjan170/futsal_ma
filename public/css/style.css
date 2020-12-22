@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Righteous|Roboto+Condensed|Ubuntu|Charmonman|Gamja+Flower|Indie+Flower|Gloria+Hallelujah');
+
+/*master . partial ko body ko css*/
+
+.heading-1{
+	font-family: 'Indie Flower';
+	margin-top: 2%;
+	text-align: center;
+	color: black;
+
+}
+
+.heading-2{
+	font-family: 'Indie Flower';
+	font-size: 20px;
+	margin-top: 2%;
+	text-align: center;
+	color: black;
+}
+
+.contact .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+
