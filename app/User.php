@@ -55,6 +55,7 @@ class User extends Authenticatable
           }
           abort(401, 'This action is unauthorized.');
         }
+
         public function hasAnyRole($roles)
         {
           if (is_array($roles)) {
@@ -70,9 +71,10 @@ class User extends Authenticatable
           }
           return false;
         }
+
         public function hasRole($role)
         {
-          if ($this->roles()->where(‘name’, $role)->first()) {
+          if ($this->roles()->where(‘role’, $role)->first()) {
             return true;
           }
           return false;
