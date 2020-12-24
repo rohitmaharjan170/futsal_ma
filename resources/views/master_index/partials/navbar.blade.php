@@ -22,8 +22,8 @@
                                                <a class="nav-link" href="route('admin.dashbaord')">Dashboard</a>
 
                                             @endif @endif
-                       <a class="nav-link " href="#accounts">Sign Up</a><br>
-                       <a class="nav-link " href="#accounts">Log In </a><br>
+                       <a class="nav-link " href="/register">Register</a><br>
+                       <a class="nav-link " href="/login">Log In </a><br>
                        <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">

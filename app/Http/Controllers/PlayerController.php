@@ -4,25 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+
+class PlayerController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+        public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('role:ROLE_PLAYER');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-
-    
     public function index()
     {
         return view('master_index/index');

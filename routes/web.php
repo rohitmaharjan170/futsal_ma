@@ -14,13 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master_index');
+    return view('master_index.index');
 });
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index', 'HomeController@index');
 
-Route::get('/', 'HomeController@index');
 
-Route::get('/player', 'HomeController@player_dashboard')->name('home');
+// player routes
+Route::get('/playerdashboard', 'PlayerController@player_dashboard');
+
+
+//futsaladmin routes
+Route::get('/futsaldashboard', 'AdminController@futsal_dashboard');
+
+
+//super admin
+ Route::get('/superdashboard', 'SuperAdminController@master_admin');
+
+
+
+
