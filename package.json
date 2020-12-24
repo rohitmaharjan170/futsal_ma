@@ -23,5 +23,10 @@
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome": "^1.1.8",
+        "@fortawesome/fontawesome-free": "^5.13.1",
+        "admin-lte": "^3.0.0-alpha.2"
     }
 }
