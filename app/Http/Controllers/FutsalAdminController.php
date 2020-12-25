@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class FutsalAdminController extends Controller
 {
-    /**
+	 /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+        public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('role:ROLE_FUTSALADMIN');
     }
 
     /**
@@ -21,15 +22,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+       
 
-    
-    public function index()
-    {
-        return view('master_index/index');
-    }
 
-    public function player_dashboard()
+    public function futsal_dashboard()
     {
         return view('master_index/player_dashboard');
     }
+
 }
