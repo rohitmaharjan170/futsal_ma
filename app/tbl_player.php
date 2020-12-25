@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_player extends Model
 {
       protected $fillable = [
-       'p_first_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_email', 'p_password','p_user_role',
+       'p_first_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_email', 'p_password','p_role',
     ];
 
         protected $hidden = [

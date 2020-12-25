@@ -27,8 +27,8 @@ class CreateTblFutsalAdminsTable extends Migration
             $table->string('f_email')->unique();
             $table->timestamp('f_email_verified_at')->nullable();
             $table->string('f_password');
-            $table->unsignedInteger('f_user_role');
-            $table->foreign('f_user_role')->references('role_id')->on('roles')->default('2');
+            $table->unsignedInteger('f_role');
+            $table->foreign('f_role')->references('role_id')->on('roles')->default('2');
             $table->rememberToken();
             $table->timestamps();       
         });

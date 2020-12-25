@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_super_admin extends Model
 {
         protected $fillable = [
-        's_code', 's_email', 's_password','s_user_role',
+        's_code', 's_email', 's_password','s_role',
     ];
 
         protected $hidden = [
@@ -62,7 +62,7 @@ class tbl_super_admin extends Model
 
         public function hasRole($role)
         {
-          if ($this->roles()->where(‘role’, $role)->first()) {
+          if ($this->roles()->where(‘s_role’, $role)->first()) {
             return true;
           }
           return false;
