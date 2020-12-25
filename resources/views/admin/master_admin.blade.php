@@ -1,12 +1,6 @@
-
-
-
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" id="app">
 
@@ -31,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/superdashboard" class="nav-link">Home</a>
       </li>
 
     </ul>
@@ -74,10 +69,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-                  <i class="nav-icon fas fa-heartbeat"></i>
-                  <p> Dashboard </p>
+                                                        <i class="nav-icon fas fa-heartbeat"></i>
+                                                        <p> Dashboard </p>
                                                             </router-link>
               </li>
+
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-cog"></i>
@@ -95,26 +91,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> User Managments</p>
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p> User Managments</p>
                                                             </router-link>
               </li>
+
               <li class="nav-item">
                                            <router-link to="/changepwd" class="nav-link"> 
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Change Password</p>
+                                                  <i class="far fa-circle nav-icon"></i>
+                                                  <p>Change Password</p>
                                               </router-link>
               </li>
             </ul>
           </li>
 
-
-
-  
-
-
-
-        </ul>
+       </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -133,7 +124,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <router-view></router-view>
+
+                                     <router-view>
+                                       
+                                       
+                                     </router-view>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->

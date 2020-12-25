@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master_index.index');
+    return redirect('/index');
 });
 
 Auth::routes();
@@ -36,3 +36,4 @@ Route::get('/futsaldashboard', 'AdminController@futsal_dashboard');
 
 
 
+ 
