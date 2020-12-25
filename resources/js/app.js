@@ -36,7 +36,7 @@ let routes=[
 //register section of routes
 
 const router=new VueRouter({
-	//mode:'history',
+	mode:'history',
 	routes
 });
 
@@ -61,8 +61,8 @@ const router=new VueRouter({
  */
 
 
-// v-form script git bata
-// import { Form, HasError, AlertError } from 'vform'
+//v-form script git bata
+import { Form, HasError, AlertError } from 'vform'
 
 //v -component tei git bata
 Vue.component(HasError.name, HasError)

@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/index', 'HomeController@index');
+//Route::get('{path}', 'HomeController@index')->where( 'path','([A-z\d\-\/_.]+)' );
 
 
 // player routes
