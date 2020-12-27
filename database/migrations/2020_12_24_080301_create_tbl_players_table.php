@@ -25,6 +25,8 @@ class CreateTblPlayersTable extends Migration
             $table->string('p_email')->unique();
             $table->timestamp('p_email_verified_at')->nullable();
             $table->string('p_password');
+            $table->unsignedInteger('p_role');
+            $table->foreign('p_role')->references('role_id')->on('roles')->default('3');
             $table->rememberToken();
             $table->timestamps();       
 

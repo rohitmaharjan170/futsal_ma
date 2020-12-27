@@ -19,6 +19,9 @@ class CreateTblSuperAdminsTable extends Migration
             $table->string('s_email')->unique();
             $table->timestamp('s_email_verified_at')->nullable();
             $table->string('s_password');
+            $table->unsignedInteger('s_role');
+            $table->foreign('s_role')->references('role_id')->on('roles')->default('1');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
