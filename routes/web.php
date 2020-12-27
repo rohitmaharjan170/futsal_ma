@@ -38,6 +38,12 @@ Route::get('/registerplayer', 'Registers\PlayerRegisterController@register')->na
 
 Route::post('/registerplayer', 'Registers\PlayerRegisterController@store_player')->name('player_register');
 
+	//login player routes
+Route::get('/loginplayer', 'Logins\PlayerLoginController@login')->name('player_login');
+Route::post('/loginplayer', 'Logins\PlayerLoginController@authenticate')->name('player_login');
+
+
+	//others player routes
 Route::get('/playerdashboard', 'PlayerController@player_dashboard');
 
 
