@@ -62,7 +62,7 @@ class tbl_super_admin extends Model
 
         public function hasRole($role)
         {
-          if ($this->roles()->where(‘s_role’, $role)->first()) {
+          if ($this->roles()->where("s_role", $role)->first()) {
             return true;
           }
           return false;

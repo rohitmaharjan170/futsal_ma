@@ -1,4 +1,5 @@
-@include('master_index.partials.header')
+ @extends('master_index.partials.header')
+ @section('sub-title','Login fk this')
 @include('master_index.partials.navbar')
 
 @extends('master_index.partials.body')

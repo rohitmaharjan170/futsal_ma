@@ -11,7 +11,7 @@ class PlayerController extends Controller
         public function __construct()
     {
         $this->middleware('auth');
-        // $this->middleware('role:ROLE_PLAYER');
+        $this->middleware('role:ROLE_PLAYER');
     }
 
     public function index()
@@ -23,4 +23,5 @@ class PlayerController extends Controller
     {
         return view('master_index/player_dashboard');
     }
+
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_player extends Model
 {
       protected $fillable = [
-       'p_first_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_email', 'p_password','p_role',
+       'p_first_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_email', 'p_password',
     ];
 
         protected $hidden = [
@@ -18,13 +18,12 @@ class tbl_player extends Model
         'email_verified_at' => 'datetime',
     ];
 
+    protected $table = 'tbl_players';
+    public $timestamps = true;
+    protected $primaryKey = 'p_id';
 
-         public function roles()
-    {
-        return $this
-            ->belongsToMany('App\Role')
-            ->withTimestamps();
-    }
+
+
 
     // roles .php
         public function roles()
@@ -63,7 +62,7 @@ class tbl_player extends Model
 
         public function hasRole($role)
         {
-          if ($this->roles()->where(‘role’, $role)->first()) {
+          if ($this->roles()->where("p_role", $role)->first()) {
             return true;
           }
           return false;

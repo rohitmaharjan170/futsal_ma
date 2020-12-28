@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- <title>{{ config('app.name', 'Laravel') }}</title> -->
-    <title> Futsal_ma | @yeild('title') </title>    
+    <title> Futsal_ma |  @yield('sub-title') </title>    
 
     <!-- css  -->
     <!-- nav bar ko css -->

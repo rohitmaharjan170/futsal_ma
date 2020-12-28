@@ -9,7 +9,7 @@ class Role extends Model
         public function users()
     {
         return $this
-            ->belongsToMany('App\User')
+            ->belongsToMany('App\tbl_player')
             ->withTimestamps();
     }
 }

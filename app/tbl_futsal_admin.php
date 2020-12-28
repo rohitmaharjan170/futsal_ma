@@ -65,7 +65,7 @@ class tbl_futsal_admin extends Model
 
         public function hasRole($role)
         {
-          if ($this->roles()->where(‘role’, $role)->first()) {
+          if ($this->roles()->where("f_role", $role)->first()) {
             return true;
           }
           return false;

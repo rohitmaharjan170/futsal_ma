@@ -8,32 +8,28 @@ use Auth;
 
 class PlayerLoginController extends Controller
 {
-    public function login()
-    {
 
-      return view('master_index.index');
-    }
 
     public function authenticate(Request $request)
     {
         $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
+            'p_email' => 'required|string|email',
+            'p_password' => 'required|string',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('p_email', 'p_password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home');
+            return redirect()->intended('master_index.player_dashboard');
         }
 
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+        return redirect('loginplayer')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
     public function logout() {
       Auth::logout();
 
-      return redirect('login');
+      return redirect('loginplayer');
     }
 
 

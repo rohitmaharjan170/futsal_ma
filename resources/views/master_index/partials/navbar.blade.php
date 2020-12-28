@@ -76,7 +76,7 @@
 
                                 @error('p_first_name')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>First Name is required </strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -90,7 +90,7 @@
 
                                 @error('p_middle_name')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong> enter - if no middle name </strong>
+                                        <strong> {{ $message }} </strong>
                                     </span>
                                 @enderror
                             </div>
@@ -105,7 +105,7 @@
 
                                 @error('p_last_name')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>Last Name is required</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -156,10 +156,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="p_password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="p_password_confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-7">
-                                <input id="p_password-confirm" type="password" class="form-control" name="p_citypassword_confirmation" required autocomplete="new-password">
+                                <input id="p_password_confirm" type="password" class="form-control" name="p_password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
