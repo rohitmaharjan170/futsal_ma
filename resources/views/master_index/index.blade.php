@@ -7,6 +7,8 @@
 	@include('master_index.partials.navbar')
 
 	@include('master_index.partials.body')
+
+	
 	
 </body>
 </html>
