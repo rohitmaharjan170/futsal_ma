@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
 
 class tbl_player extends Model
 {
+      
       protected $fillable = [
        'p_first_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_email', 'p_password','p_role',
     ];
@@ -27,12 +30,12 @@ class tbl_player extends Model
     }
 
     // roles .php
-        public function roles()
-    {
-        return $this
-            ->belongsToMany('App\Role')
-            ->withTimestamps();
-    }
+    //     public function roles()
+    // {
+    //     return $this
+    //         ->belongsToMany('App\Role')
+    //         ->withTimestamps();
+    // }
 
 
 

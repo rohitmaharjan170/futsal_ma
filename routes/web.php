@@ -18,7 +18,8 @@ Route::get('/', function () {
     return redirect('/index');
 });
 
-Auth::routes();
+//Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/index', 'HomeController@index');
 //Route::get('{path}', 'HomeController@index')->where( 'path','([A-z\d\-\/_.]+)' );
