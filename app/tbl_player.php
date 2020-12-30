@@ -22,20 +22,14 @@ class tbl_player extends Model
     ];
 
 
-         public function roles()
+         
+   // roles .php
+        public function roles()
     {
         return $this
             ->belongsToMany('App\Role')
             ->withTimestamps();
     }
-
-    // roles .php
-    //     public function roles()
-    // {
-    //     return $this
-    //         ->belongsToMany('App\Role')
-    //         ->withTimestamps();
-    // }
 
 
 
