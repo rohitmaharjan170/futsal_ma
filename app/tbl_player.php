@@ -6,8 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class tbl_player extends Model
 {
+
+    // protected $guarded = ['p_id'];
+    // protected $hidden = [
+    //  'p_password', 'remember_token',
+    // ];
+    // public function getAuthPassword()
+    // {
+    //  return $this->p_password;
+    // }
+
+
       protected $fillable = [
-       'p_first_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_email', 'p_password',
+       'p_u_id','p_first_name','p_middle_name','p_last_name','p_mobile','p_city','p_district','p_zone', 'p_u_email', 'p_u_password',
     ];
 
         protected $hidden = [
@@ -20,9 +31,13 @@ class tbl_player extends Model
 
     protected $table = 'tbl_players';
     public $timestamps = true;
-    protected $primaryKey = 'p_id';
+    protected $primaryKey = 'p_u_id';
 
 
+
+    // public function User(){
+    // return $this->belongsTo('App\User', 'u_id');
+    // }
 
 
     // roles .php

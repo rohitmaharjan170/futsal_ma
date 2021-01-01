@@ -46,6 +46,24 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+         'player' => [
+             'redirectTo' => 'master_index.player_dashboard',
+             'driver' => 'session',
+             'provider' => 'player',
+            ],
+
+        'futsal_admin' => [
+             'redirectTo' => 'master_index.index',
+             'driver' => 'session',
+             'provider' => 'futsal_admin',
+            ],
+
+        'super_admin' => [
+             'redirectTo' => 'admin.master_admin',
+             'driver' => 'session',
+             'provider' => 'super_admin',
+            ],
     ],
 
     /*
@@ -71,10 +89,20 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'players' => [
+            'driver' => 'eloquent',
+            'model' => App\tbl_player::class,
+        ],
+        'futsal_admin' => [
+            'driver' => 'eloquent',
+            'model' => App\tbl_futsal_admin::class,
+        ],
+        'super_admin' => [
+            'driver' => 'eloquent',
+            'model' => App\tbl_super_admin::class,
+        ],
+
+
     ],
 
     /*

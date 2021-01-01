@@ -5,32 +5,39 @@ namespace App\Http\Controllers\Logins;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class PlayerLoginController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+    
+    use AuthenticatesUsers;
 
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function authenticate(Request $request)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $request->validate([
-            'p_email' => 'required|string|email',
-            'p_password' => 'required|string',
-        ]);
-
-        $credentials = $request->only('p_email', 'p_password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('master_index.player_dashboard');
-        }
-
-        return redirect('loginplayer')->with('error', 'Oppes! You have entered invalid credentials');
+        $this->middleware('guest')->except('logout');
     }
-
-    public function logout() {
-      Auth::logout();
-
-      return redirect('loginplayer');
-    }
-
-
 }

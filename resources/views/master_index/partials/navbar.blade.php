@@ -2,7 +2,7 @@
     <div id="app">
             <nav>
                 <div class="logo">
-                    <img src="{{ asset('image/futsal_ma logo_lg green.png') }}" class="vlogo">
+                   <a href="/"> <img src="{{ asset('image/futsal_ma logo_lg green.png') }}" class="vlogo"> </a>
                 </div>
 
                     <ul class="navlink"  style="z-index: 3;">
@@ -128,12 +128,12 @@
 
 
                         <div class="form-group row">
-                            <label for="p_email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-7">
-                                <input id="p_email" type="email" class="form-control @error('p_email') is-invalid @enderror" name="p_email" value="{{ old('p_email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('p_email')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -142,7 +142,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="p_password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="p_u_password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-7">
                                 <input id="p_password" type="password" class="form-control @error('p_password') is-invalid @enderror" name="p_password" required autocomplete="new-password">
@@ -210,6 +210,20 @@
                         </div>
 
 
+                        <div class="form-group row" style="display: none;">
+                            <label for="u_role_id" class="col-md-4 col-form-label text-md-right">{{ __('User Role') }}</label>
+
+                            <div class="col-md-3" >
+                                <input id="u_role_id" type="number" value="3" class="form-control @error('u_role_id') is-invalid @enderror" name="u_role_id" value="{{ old('u_role_id') }}" required autocomplete="name" autofocus>
+
+                                @error('u_role_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
 
                         <div class="form-group row mb-3 mt-5">
@@ -238,7 +252,7 @@
         </button>
       </div>
       <div class="modal-body">
-                    <form method="POST" action="{{ route('player_login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">

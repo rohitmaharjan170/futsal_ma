@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_futsal_admin extends Model
 {
       protected $fillable = [
-        'f_name','f_owner','f_mobile','f_pan','f_city','f_district','f_zone', 'f_email', 'f_password','f_role',
+        'f_u_id', 'f_name','f_owner','f_mobile','f_pan','f_city','f_district','f_zone', 'f_lattitude', 'f_longitude', 'f_u_email', 'f_u_password',
     ];
 
         protected $hidden = [

@@ -14,13 +14,12 @@ class CreateTblSuperAdminsTable extends Migration
     public function up()
     {
         Schema::create('tbl_super_admins', function (Blueprint $table) {
-            $table->increments('s_Id');
-            $table->string('s_code')->unique();
-            $table->string('s_email')->unique();
-            $table->timestamp('s_email_verified_at')->nullable();
-            $table->string('s_password');
-            $table->unsignedInteger('s_role');
-            $table->foreign('s_role')->references('role_id')->on('roles')->default('1');
+            $table->increments('s_sn');
+            $table->unsignedInteger('s_u_id');
+            $table->foreign('s_u_id')->references('id')->on('users');
+            $table->string('s_u_email');
+            $table->foreign('s_u_email')->references('email')->on('users');
+            $table->string('s_u_password');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -22,9 +22,9 @@ class CreateTblBookingsTable extends Migration
             $table->unsignedInteger('b_t_id');
             $table->foreign('b_t_id')->references('t_id')->on('tbl_timeslots');
             $table->unsignedInteger('b_p_id');
-            $table->foreign('b_p_id')->references('p_id')->on('tbl_players');
+            $table->foreign('b_p_id')->references('p_u_id')->on('tbl_players');
             $table->unsignedInteger('b_f_id');
-            $table->foreign('b_f_id')->references('f_id')->on('tbl_futsal_admins');
+            $table->foreign('b_f_id')->references('f_u_id')->on('tbl_futsal_admins');
             $table->unsignedInteger('b_bs_id');
             $table->foreign('b_bs_id')->references('bs_id')->on('tbl_booking_statuses');
             $table->timestamps();

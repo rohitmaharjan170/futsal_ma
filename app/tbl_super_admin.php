@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_super_admin extends Model
 {
         protected $fillable = [
-        's_code', 's_email', 's_password','s_role',
+        's_u_id', 's_u_email', 's_u_password',
     ];
 
         protected $hidden = [

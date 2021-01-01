@@ -1,4 +1,3 @@
-@include('master_index.partials.futsal_header')
 
 <div class="container-fluid">
 	

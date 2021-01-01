@@ -24,6 +24,9 @@ Route::get('/register', function(){
 	return redirect('/errors/404');
 });
 
+// Route::get('/login', function(){
+// 	return redirect('/errors/404');
+// });
 
 Route::get('/index', 'HomeController@index');
 //Route::get('{path}', 'HomeController@index')->where( 'path','([A-z\d\-\/_.]+)' );
@@ -33,12 +36,10 @@ Route::get('/index', 'HomeController@index');
 	//register player routes
 Route::post('/registerplayer', 'Registers\PlayerRegisterController@store_player')->name('player_register');
 
-	//login player routes
-Route::post('/loginplayer', 'Logins\PlayerLoginController@authenticate')->name('player_login');
-
-
 	//others player routes
 Route::get('/playerdashboard', 'PlayerController@player_dashboard');
+
+
 
 	//register futsal routes
 Route::get('/registerplayer', 'Registers\PlayerRegisterController@register')->name('player_register');

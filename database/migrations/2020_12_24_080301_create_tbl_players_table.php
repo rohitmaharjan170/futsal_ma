@@ -14,7 +14,9 @@ class CreateTblPlayersTable extends Migration
     public function up()
     {
         Schema::create('tbl_players', function (Blueprint $table) {
-            $table->increments('p_id');
+            $table->increments('p_sn');
+            $table->unsignedInteger('p_u_id');
+            $table->foreign('p_u_id')->references('id')->on('users');
             $table->string('p_first_name');
             $table->string('p_middle_name')->nullable();
             $table->string('p_last_name');
@@ -22,11 +24,9 @@ class CreateTblPlayersTable extends Migration
             $table->string('p_city');
             $table->string('p_district');
             $table->string('p_zone');
-            $table->string('p_email')->unique();
-            $table->timestamp('p_email_verified_at')->nullable();
-            $table->string('p_password');
-            $table->unsignedInteger('p_role')->default('3');
-            $table->foreign('p_role')->references('role_id')->on('roles');
+            $table->string('p_u_email');
+            $table->foreign('p_u_email')->references('email')->on('users');
+            $table->string('p_u_password');
             $table->rememberToken();
             $table->timestamps();       
 

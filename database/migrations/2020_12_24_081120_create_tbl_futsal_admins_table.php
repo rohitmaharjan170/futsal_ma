@@ -14,7 +14,9 @@ class CreateTblFutsalAdminsTable extends Migration
     public function up()
     {
         Schema::create('tbl_futsal_admins', function (Blueprint $table) {
-            $table->increments('f_id');
+            $table->increments('f_sn');
+            $table->unsignedInteger('f_u_id');
+            $table->foreign('f_u_id')->references('id')->on('users');
             $table->string('f_name');
             $table->string('f_owner');
             $table->bigInteger('f_mobile');
@@ -24,11 +26,9 @@ class CreateTblFutsalAdminsTable extends Migration
             $table->string('f_zone');
             $table->decimal('f_lattitude', 4, 4)->nullable();
             $table->decimal('f_longitude', 4, 4)->nullable();
-            $table->string('f_email')->unique();
-            $table->timestamp('f_email_verified_at')->nullable();
-            $table->string('f_password');
-            $table->unsignedInteger('f_role');
-            $table->foreign('f_role')->references('role_id')->on('roles')->default('2');
+            $table->string('f_u_email');
+            $table->foreign('f_u_email')->references('email')->on('users');
+            $table->string('f_u_password');
             $table->rememberToken();
             $table->timestamps();       
         });
