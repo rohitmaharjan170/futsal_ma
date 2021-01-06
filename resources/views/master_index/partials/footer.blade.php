@@ -5,7 +5,7 @@
                 <div class="card border-0">
                     <div class="card-body text-center ">
                         <h2><b>Let `s have a chat !</b></h2>
-                        <p class="pl-0 ml-0 mb-5">Find out what we can do for your business or home.</p>
+                        <p class="pl-0 ml-0 mb-5">Find out what we can do for your Futsal.</p>
                         <div class="row text-center justify-content-center">
                             <div class="col-auto">
                                 <div class="input-group-lg input-group mb-3 " ><input type="text" class="form-control" placeholder="Enter your e-mail address" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -19,7 +19,7 @@
         </div>
     <hr class="mx-0 px-0">
 
-        <div class="row justify-content-around mb-0 pt-5 pb-0 ">
+        <div class="row justify-content-around mb-0 pt-5 pb-3 ">
             <div class=" col-11">
                 <div class="row justify-content-center">
                     <div class="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">

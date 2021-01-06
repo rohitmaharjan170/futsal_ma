@@ -62,8 +62,7 @@ class PlayerRegisterController extends Controller
           'user_id' => $currentUser->id,
       ]);
 
-      // return redirect('/playerdashboard');
-      return redirect('/');
+     return redirect('/login');
   }
 
 }

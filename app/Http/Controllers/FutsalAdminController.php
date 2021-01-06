@@ -13,6 +13,7 @@ class FutsalAdminController extends Controller
      */
         public function __construct()
     {
+        // $this->middleware(['auth', 'verified']);
         $this->middleware('auth');
         $this->middleware('role:ROLE_FUTSALADMIN');
     }
@@ -29,5 +30,6 @@ class FutsalAdminController extends Controller
     {
         return view('master_index/player_dashboard');
     }
+
 
 }

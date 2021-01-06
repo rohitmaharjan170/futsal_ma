@@ -52,6 +52,14 @@ nav .navlink a{
 	transition: all 0.3s ease;
 }
 
+.sticky {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
 @media screen and (max-width: 1024px){
 	nav .navlink{
 	width: 80%; 

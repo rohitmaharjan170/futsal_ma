@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
-            'port' => env('MAIL_PORT', 465),
-            'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
-            'username' => env('MAIL_USERNAME','rmaharjan61@gmail.com'),
-            'password' => env('MAIL_PASSWORD','reeknacmgeywoomz'),
+            'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
+            'port' => env('MAIL_PORT', 2525),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('MAIL_USERNAME','b7e915351b6316'),
+            'password' => env('MAIL_PASSWORD','6ed967b8c72af2'),
             'timeout' => null,
             'auth_mode' => null,
         ],

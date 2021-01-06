@@ -30,7 +30,8 @@ Route::get('/register', function(){
 
 Route::get('/index', 'HomeController@index'); //->middleware('verified')
 //Route::get('{path}', 'HomeController@index')->where( 'path','([A-z\d\-\/_.]+)' );
-
+Route::view('/aboutus', 'master_index/about_us');
+Route::view('/contactus', 'master_index/contact_us');
 
 // player routes
 	//register player routes
@@ -48,6 +49,10 @@ Route::post('/registerplayer', 'Registers\PlayerRegisterController@store_player'
 
 
 //futsaladmin routes
+Route::view('/registerfutsal', 'registers/futsal_register');
+
+Route::view('/loginfutsal', 'logins/futsal_login');
+
 Route::get('/futsaldashboard', 'AdminController@futsal_dashboard');
 
 

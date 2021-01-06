@@ -1,8 +1,6 @@
 
-<div class="container-fluid">
+<div class="container-fluid px-0">
 	
-
-
 	<main class="py-4">
             @yield('content1')
 	</main>
