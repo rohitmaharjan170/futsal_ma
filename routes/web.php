@@ -18,7 +18,7 @@ Route::get('/', function () {
     return redirect('/index');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/register', function(){
 	return redirect('/errors/404');
@@ -28,7 +28,7 @@ Route::get('/register', function(){
 // 	return redirect('/errors/404');
 // });
 
-Route::get('/index', 'HomeController@index');
+Route::get('/index', 'HomeController@index'); //->middleware('verified')
 //Route::get('{path}', 'HomeController@index')->where( 'path','([A-z\d\-\/_.]+)' );
 
 
