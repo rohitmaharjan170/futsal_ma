@@ -20,19 +20,45 @@
                                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                         @if (auth()->check())
-                                            @if (auth()->user()->role_id==1)
-                                               <a class="nav-link" href="route('admin.dashbaord')">Dashboard</a>
+                                            @if (auth()->user()->u_role_id==3)
+                                               <a class="nav-link" href="/playerdashboard">Player Dashboard</a>
+                                               <div class="dropdown-divider"></div>
 
-                                            @endif @endif
-                       <a class="nav-link " href="" data-toggle="modal" data-target="#registerModal">Register</a>
+                                               <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                                 </a>
 
-                       <a class="nav-link " href="" data-toggle="modal" data-target="#loginModal">Login</a>
+                                            @elseif (auth()->user()->u_role_id==2)
+                                               <a class="nav-link" href="/futsaldashboard">Player Dashboard</a>
 
-                       <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                         </a>
+                                               <div class="dropdown-divider"></div>
+                                               
+                                               <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                                 </a>
+
+                                            @elseif (auth()->user()->u_role_id==1)
+                                               <a class="nav-link" href="/superdashboard">Super Dashboard</a>
+
+                                               <div class="dropdown-divider"></div>
+                                               
+                                               <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                                 </a>
+                                            @endif 
+                                    @else
+                                                
+                                    <a class="nav-link " href="" data-toggle="modal" data-target="#registerModal">Register</a>
+
+                                     <a class="nav-link " href="" data-toggle="modal" data-target="#loginModal">Login</a>
+                                    @endif
+                    
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf

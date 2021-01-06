@@ -27,7 +27,7 @@
         <div class="row justify-content-lg-center">
           
           <div class="col-lg-3" style="  margin-bottom: 1.5rem; text-align: center;">
-            <img class="rounded-circle" src="{{asset('image/profile.png')}}" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="{{asset('image/rohit.jpg')}}" width="140" height="140">
             <h3>Binaya Maharjan</h3>
             <p>Full-Stack developer <br> Duties: 
                 <br>- VueJs
@@ -43,7 +43,7 @@
           </div>   
           
           <div class="col-lg-3" style="  margin-bottom: 1.5rem; text-align: center;">
-            <img class="rounded-circle" src="{{asset('image/profile.png')}}" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="{{asset('image/rohit.jpg')}}" width="140" height="140">
             <h3>Kshitiz Khanal</h3>
             <p>Full-Stack developer <br> Duties: 
                 <br>- VueJs
@@ -59,7 +59,7 @@
           </div>   
           
           <div class="col-lg-3" style="  margin-bottom: 1.5rem; text-align: center;">
-            <img class="rounded-circle" src="{{asset('image/profile.png')}}" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="{{asset('image/rohit.jpg')}}" width="140" height="140">
             <h3>Pratik Dahal</h3>
             <p>Full-Stack developer <br> Duties: 
                 <br>- VueJs
@@ -75,9 +75,9 @@
           </div>   
           
           <div class="col-lg-3" style="  margin-bottom: 1.5rem; text-align: center;">
-            <img class="rounded-circle" src="{{asset('image/rohit.jpg')}}" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="{{asset('image/rohit.jpg')}}" width="140" height="140">
             <h3>Rohit Maharjan</h3>
-            <p>Full-Stack developer <br> Duties: 
+            <p>Full-Stack Developer <br> Duties: 
                 <br>- VueJs
                 <br>- Roles
                 <br>- Database
