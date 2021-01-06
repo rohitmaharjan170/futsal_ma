@@ -1,6 +1,6 @@
 <footer>
     <div class="container-fluid justify-content-center">
-        <div class="row py-5">
+        <div class="row pb-5">
             <div class="col">
                 <div class="card border-0">
                     <div class="card-body text-center ">
