@@ -2,21 +2,40 @@
         <div class="container-fluid">
             <div class=" d-flex justify-content-end">
                 <div class="d-flex flex-column">
+
+                @if(Auth::user())
+                @if (auth()->user()->u_role_id==3)
+
+                    <h1 class="heading-1">Book A Futsal NOW !!<br> and start your futsal plan going with <span style="color: #d82958">Futsal_ma</span></h1>
+                    <p class="para" >Get your friends connected with the internet and innovation. Get exlusive feature becoming your futsal player !! </p>
+                    
+                @elseif (auth()->user()->u_role_id==1)
+                    <h1 class="heading-1">What's up Super Admin !!<br> Hope you are doing good... <span style="color: #d82958">Futsal_ma</span></h1>
+                    <p class="para" >Manage your futsal_ma system more efficiently and faset with just one click !! </p>
+
+                @elseif (auth()->user()->u_role_id==2)
                     <h1 class="heading-1">Register your Futsal !!<br> and get your booking started with <span style="color: #d82958">Futsal_ma</span></h1>
                     <p class="para" >Get your futsal connected with the internet and innovation. Get exlusive feature becoming your futsal admin !! </p>
+                @endif
+
+            @else
+
+            <h1 class="heading-1">Register your Futsal !!<br> and get your booking started with <span style="color: #d82958">Futsal_ma</span></h1>
+                    <p class="para" >Get your futsal connected with the internet and innovation. Get exlusive feature becoming your futsal admin !! </p>
+
+            @endif
+                    
                    
 
             @if(Auth::user())
                 @if (auth()->user()->u_role_id==3)
 
-                    <input disabled type="button" value="You are logged in as Player !!" class="btn btn-danger">
-
-                    <input disabled type="button" value="You are logged in as Player !!" class="btn btn-danger">
+                    <a href="{{ URL::to('futsalbooking') }}">
+                    <input type="button" value="Book a Futsal" class="btn btn-success"></a>
                     
                 @elseif (auth()->user()->u_role_id==1)
-                    <input disabled type="button" value="You are logged in as Super Admin !!" class="btn btn-danger">
-
-                    <input disabled type="button" value="You are logged in as Super Admin !!" class="btn btn-danger">
+                    <a href="{{ URL::to('superdashboard') }}">
+                    <input type="button" value="Super Dashboard" class="btn btn-success"></a>
 
                 @elseif (auth()->user()->u_role_id==2)
                     <a href="{{ URL::to('futsaldashboard') }}">
