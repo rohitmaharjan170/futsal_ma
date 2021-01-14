@@ -141,12 +141,12 @@
                         
 
                          <div class="form-group row">
-                            <label for="p_mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="p_mobile" type="number" class="form-control @error('p_mobile') is-invalid @enderror" name="p_mobile" value="{{ old('p_mobile') }}" required autocomplete="p_mobile" autofocus>
+                                <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
 
-                                @error('p_mobile')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -24,8 +24,8 @@ class CreateTblFutsalAdminsTable extends Migration
             $table->string('f_city');
             $table->string('f_district');
             $table->string('f_zone');
-            $table->decimal('f_lattitude', 4, 4)->nullable();
-            $table->decimal('f_longitude', 4, 4)->nullable();
+            $table->double('f_lattitude', 8, 4)->nullable();
+            $table->double('f_longitude', 8, 4)->nullable();
             $table->string('f_u_email');
             $table->foreign('f_u_email')->references('email')->on('users');
             $table->string('f_u_password');

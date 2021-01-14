@@ -45,15 +45,16 @@ Route::get('/playerdashboard', 'PlayerController@player_dashboard');
 	//register futsal routes
 Route::get('/registerplayer', 'Registers\PlayerRegisterController@register')->name('player_register');
 
-Route::post('/registerplayer', 'Registers\PlayerRegisterController@store_player')->name('player_register');
+// Route::post('/registerplayer', 'Registers\PlayerRegisterController@store_player')->name('player_register');
 
 
 //futsaladmin routes
 Route::view('/registerfutsal', 'registers/futsal_register');
+Route::post('/registerfutsal', 'Registers\FutsalRegisterController@store_futsal_admin')->name('futsal_register');
 
 Route::view('/loginfutsal', 'logins/futsal_login');
 
-Route::get('/futsaldashboard', 'AdminController@futsal_dashboard');
+Route::get('/futsaldashboard', 'FutsalAdminController@futsal_dashboard');
 
 
 //super admin

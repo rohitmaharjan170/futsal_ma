@@ -61,12 +61,12 @@
         <!-- register form -->
         <div class="container col-6 mx-0 px-0">
         	<div class="container">
-        	<form method="POST" action="{{ route('player_register') }}">
+        	<form method="POST" action="{{ route('futsal_register') }}">
                         @csrf
 
             <div class="login-logo" style="text-align: center; color: green">
                                     <i class="fas fa-lock text-primary fa-4x"></i>
-                                    <h3 class="box-title m-b-20 text-center mb-4">Register</h3>
+                                    <h3 class="box-title m-b-20 text-center mb-4">Register Your Futsal</h3>
                                 </div>
 
                         <div class="form-group row">
@@ -99,12 +99,12 @@
                         </div>
 
                          <div class="form-group row">
-                            <label for="p_mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="p_mobile" type="number" class="form-control @error('p_mobile') is-invalid @enderror" name="p_mobile" value="{{ old('p_mobile') }}" required autocomplete="p_mobile" autofocus>
+                                <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
 
-                                @error('p_mobile')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -113,12 +113,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="pan_number" class="col-md-4 col-form-label text-md-right">{{ __('PAN number') }}</label>
+                            <label for="f_pan" class="col-md-4 col-form-label text-md-right">{{ __('PAN number') }}</label>
 
                               <div class="col-md-6">
-                                <input id="pan_number" type="text" class="form-control @error('pan_number') is-invalid @enderror" name="futsal_owner" value="{{ old('pan_number') }}" autocomplete="name" autofocus>
+                                <input id="f_pan" type="number" class="form-control @error('f_pan') is-invalid @enderror" name="f_pan" value="{{ old('f_pan') }}" autocomplete="name" autofocus>
 
-                                @error('pan_number')
+                                @error('f_pan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong> {{ $message }} </strong>
                                     </span>
@@ -159,18 +159,18 @@
                             <label for="f_password_confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-7">
-                                <input id="f_password_confirm" type="password" class="form-control" name="f_password_confirm" required autocomplete="new-password">
+                                <input id="f_password_confirm" type="password" class="form-control" name="f_password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
 
                         <div class="form-group row">
-                            <label for="futsal_lallitude" class="col-md-4 col-form-label text-md-right">{{ __('Futsal Latitude') }}</label>
+                            <label for="futsal_lattitude" class="col-md-4 col-form-label text-md-right">{{ __('Futsal Latitude') }}</label>
 
                             <div class="col-md-3">
-                                <input id="futsal_lallitude" type="number" class="form-control @error('futsal_lallitude') is-invalid @enderror" name="futsal_lallitude" value="{{ old('futsal_lallitude') }}" required autocomplete="name" autofocus>
+                                <input id="futsal_lattitude" type="decimal" class="form-control @error('futsal_lattitude') is-invalid @enderror" name="futsal_lattitude" value="{{ old('futsal_lattitude') }}" required autocomplete="name" autofocus>
 
-                                @error('futsal_lallitude')
+                                @error('futsal_lattitude')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -183,7 +183,7 @@
                             <label for="futsal_longitude" class="col-md-1.5 col-form-label text-md-right">{{ __('Longitude') }}</label>
 
                             <div class="col-md-3">
-                                <input id="futsal_longitude" type="number" class="form-control @error('futsal_longitude') is-invalid @enderror" name="futsal_longitude" value="{{ old('futsal_longitude') }}" required autocomplete="name" autofocus>
+                                <input id="futsal_longitude" type="decimal" class="form-control @error('futsal_longitude') is-invalid @enderror" name="futsal_longitude" value="{{ old('futsal_longitude') }}" required autocomplete="name" autofocus>
 
                                 @error('futsal_longitude')
                                     <span class="invalid-feedback" role="alert">
@@ -237,12 +237,12 @@
                             </div>
 
 
-                            <label for="none" class="col-md-1.5 col-form-label text-md-right" style="display: none;">{{ __('District  ') }}</label>
+                            <label for="u_role_name" class="col-md-4 col-form-label text-md-right" style="display: none;">{{ __('User Role') }}</label>
 
-                            <div class="col-md-3" style="display: none">
-                                <input id="none" type="text" class="form-control @error('none') is-invalid @enderror" name="none" value="{{ old('none') }}" required autocomplete="name" autofocus>
+                            <div class="col-md-3" style="display: none;" >
+                                <input id="u_role_name" type="number" value="2" class="form-control @error('u_role_name') is-invalid @enderror" name="u_role_name" value="{{ old('u_role_name') }}" required autocomplete="name" autofocus>
 
-                                @error('none')
+                                @error('u_role_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

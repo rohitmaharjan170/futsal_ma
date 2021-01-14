@@ -18,13 +18,10 @@ class tbl_futsal_admin extends Model
         'email_verified_at' => 'datetime',
     ];
 
+    protected $table = 'tbl_futsal_admins';
+    public $timestamps = true;
+    protected $primaryKey = 'f_u_id';
 
-         public function roles()
-    {
-        return $this
-            ->belongsToMany('App\Role')
-            ->withTimestamps();
-    }
 
 
 
