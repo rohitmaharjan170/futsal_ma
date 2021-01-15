@@ -30,7 +30,7 @@
                 </div>
                 <br><br><br>
                 <div class="prof_name">
-                <h2>Rohit Maharjan</h2>
+                <h2>{{$currentPlayer->p_first_name}} {{$currentPlayer->p_middle_name}} {{$currentPlayer->p_last_name}}</h2>
                 <h4><i class="far fa-clock"></i>&nbsp; register date August6,2020</h4>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
