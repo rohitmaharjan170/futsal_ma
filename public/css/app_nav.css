@@ -40,6 +40,10 @@ nav .navlink a{
 	text-decoration: none;
 	font-weight: bold;
 }
+nav li .active {
+    color:green !important;
+    text-decoration: overline;
+}
 .burger{
 	display: none;
 	cursor: pointer;

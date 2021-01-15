@@ -31,7 +31,10 @@
                 @if (auth()->user()->u_role_id==3)
 
                     <a href="{{ URL::to('futsalbooking') }}">
-                    <input type="button" value="Book a Futsal" class="btn btn-success"></a>
+                    <input type="button" value="Book a Futsal" class="btn btn-primary"></a>
+
+                    <a href="{{ URL::to('playerdashboard') }}">
+                    <input type="button" value="Player Dashboard" class="btn btn-success"></a>
                     
                 @elseif (auth()->user()->u_role_id==1)
                     <a href="{{ URL::to('superdashboard') }}">

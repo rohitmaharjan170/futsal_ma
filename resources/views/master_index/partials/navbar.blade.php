@@ -54,7 +54,7 @@
                                             @endif 
                                     @else
                                                 
-                                    <a class="nav-link " href="" data-toggle="modal" data-target="#registerModal">Register</a>
+                                    <a class="nav-link" href="" data-toggle="modal" data-target="#registerModal">Register</a>
 
                                      <a class="nav-link " href="" data-toggle="modal" data-target="#loginModal">Login</a>
                                     @endif
@@ -360,4 +360,5 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
 </script>
