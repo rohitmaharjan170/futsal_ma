@@ -29,7 +29,8 @@ let routes=[
 	},
 	{
 		path:'/Players',
-		component: require('./components/Players.vue').default
+		component: require('./components/Players.vue').default,
+		meta:{title:'Player'}
 		// get('/userlist','UserController@listUsers');
 	},
 	{
@@ -84,6 +85,7 @@ window.Form= Form
 
 const app = new Vue({
     el: '#app',
+    // id:'header',
     router,
     // or router:router but same name so mathi ko matra vaye pugxa
 });

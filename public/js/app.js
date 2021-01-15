@@ -55148,7 +55148,10 @@ var routes = [{
   component: __webpack_require__(/*! ./components/press.vue */ "./resources/js/components/press.vue")["default"]
 }, {
   path: '/Players',
-  component: __webpack_require__(/*! ./components/Players.vue */ "./resources/js/components/Players.vue")["default"] // get('/userlist','UserController@listUsers');
+  component: __webpack_require__(/*! ./components/Players.vue */ "./resources/js/components/Players.vue")["default"],
+  meta: {
+    title: 'Player'
+  } // get('/userlist','UserController@listUsers');
 
 }, {
   path: '/Futsal_Admins',
@@ -55188,6 +55191,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(vform__WEBPACK_IMPORTED_MOD
 window.Form = vform__WEBPACK_IMPORTED_MODULE_2__["Form"];
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
+  // id:'header',
   router: router // or router:router but same name so mathi ko matra vaye pugxa
 
 });
@@ -55314,14 +55318,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************!*\
   !*** ./resources/js/components/Players.vue ***!
   \*********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Players_vue_vue_type_template_id_0c847bd2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Players.vue?vue&type=template&id=0c847bd2& */ "./resources/js/components/Players.vue?vue&type=template&id=0c847bd2&");
 /* harmony import */ var _Players_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Players.vue?vue&type=script&lang=js& */ "./resources/js/components/Players.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Players_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Players_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -55351,7 +55356,7 @@ component.options.__file = "resources/js/components/Players.vue"
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Players.vue?vue&type=script&lang=js& ***!
   \**********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

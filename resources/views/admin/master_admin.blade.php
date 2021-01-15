@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head >
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,7 +9,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Futsal_ma | @yield('sub-title')</title>
+  <title id="header">Futsal_ma | @yield('title')</title>
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -125,7 +125,7 @@
       <div class="nav-item-log mt-5 pb-2" style="width:235px; position: fixed; bottom:5%; overflow: hidden; ">
               <a class="nav-link btn btn-primary " href="{{ url('index') }}">
                    <i class="fas fa-reply mr-2 text-white "></i>
-                    <span style="color: white;">  HomePage</span>
+                    <span style="color: white;">  Home Page</span>
               </a>
       </div>
 

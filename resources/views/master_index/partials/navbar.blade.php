@@ -7,9 +7,9 @@
 
                     <ul class="navlink"  style="z-index: 3;">
                         <li><a href="/index">Home</a></li>
-                        <li><a href="#">Tournaments</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="/tournaments">Tournaments</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/pasal">Pasal</a></li>
                         <li><a href="/aboutus">About Us</a></li>
                         <li><a href="/contactus">Contact Us</a></li>
 
