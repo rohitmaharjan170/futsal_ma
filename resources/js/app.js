@@ -28,15 +28,25 @@ let routes=[
 		component: require('./components/press.vue').default
 	},
 	{
-		path:'/user',
-		component: require('./components/user.vue').default
-	}
+		path:'/Players',
+		component: require('./components/Players.vue').default
+		// get('/userlist','UserController@listUsers');
+	},
+	{
+		path:'/Futsal_Admins',
+		component: require('./components/Futsal_Admins.vue').default
+	},
+	{
+		path:'/booking_managment',
+		component: require('./components/booking_managment.vue').default
+	},
+
 ]
 
 //register section of routes
 
 const router=new VueRouter({
-	mode:'history',
+	// mode:'history',
 	routes
 });
 

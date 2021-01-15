@@ -6,10 +6,10 @@
                 <div class="card">
               
 
-                    <div class="card-header">DASHBOARD Component</div>
+                    <div class="card-header">DASHBOARD </div>
 
                     <div class="card-body">
-                        I'm a Dashboard component.
+                        Nothing in dashboard current in next vesion will be added dashboard features like number of player register, number of futsal register, total no of booking and etc...
                     </div>
                 </div>
             </div>

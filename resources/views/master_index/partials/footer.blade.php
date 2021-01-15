@@ -4,8 +4,8 @@
             <div class="col">
                 <div class="card border-0">
                     <div class="card-body text-center ">
-                        <h2><b>Let `s have a chat !</b></h2>
-                        <p class="pl-0 ml-0 mb-5">Find out what we can do for your Futsal.</p>
+                        <h2><b>Subscribe to your Newsletter !</b></h2>
+                        <p class="pl-0 ml-0 mb-5">Find out what Futsal_Ma new updates gets you !!.</p>
                         <div class="row text-center justify-content-center">
                             <div class="col-auto">
                                 <div class="input-group-lg input-group mb-3 " ><input type="text" class="form-control" placeholder="Enter your e-mail address" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -29,11 +29,11 @@
                     </div>
                     <div class="col-md-3 col-12 my-sm-0 mt-5">
                         <ul class="list-unstyled">
-                            <li class="mt-md-3 mt-4">Our Solution</li>
-                            <li>Intergrated Security Platform</li>
-                            <li>Core Features</li>
-                            <li>Product Features</li>
-                            <li>Pricing</li>
+                            <li class="mt-md-3 mt-4">Our Features</li>
+                            <li>Online Futsal Booking</li>
+                            <li>Online Tournaments</li>
+                            <li>Location-wise Futsal</li>
+                            <li>Jersey Pasal</li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-12 my-sm-0 mt-5">
@@ -47,11 +47,13 @@
                     </div>
                     <div class="col-xl-auto col-md-3 col-12 my-sm-0 mt-5">
                         <ul class="list-unstyled">
-                            <li class="mt-md-3 mt-4">Offer</li>
-                            <li>Intergrated Security Platform</li>
-                            <li>Core Features</li>
-                            <li>Product Features</li>
-                            <li>Pricing</li>
+                            <li class="mt-md-3 mt-4">Social Medai Links:</li>
+                            <li><a href="https://www.facebook.com/mhrz.rohit" target="_blank"><i class="fab fa-facebook"></i></a> 
+                            
+                            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square"></i></a>
+
+                            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -152,7 +154,7 @@ footer img {
  footer li:first-child {
      font-size: 21px !important;
      font-weight: bold;
-     margin-bottom: calc(40px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) !important;
+     margin-bottom: calc(5px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) !important;
      color: #757575 !important
  }
 
@@ -170,5 +172,11 @@ footer img {
      color: green;
      font-weight: bold
  }
+
+.fa-facebook, .fa-instagram-square, .fa-twitter {
+    font-size: 30px;
+    color: green;
+    margin-right: 45px;
+}
 </style>
 

@@ -60,6 +60,8 @@ Route::get('/futsaldashboard', 'FutsalAdminController@futsal_dashboard');
 //super admin
  Route::get('/superdashboard', 'SuperAdminController@master_admin');
 
+Route::get('/listplayer', 'SuperAdminController@listPlayers');
+Route::get('/listfutsal', 'SuperAdminController@listFutsals');
 
 
 

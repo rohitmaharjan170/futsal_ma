@@ -9,7 +9,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Futsal_ma | @yield('title')</title>
+  <title>Futsal_ma | @yield('sub-title')</title>
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,7 +26,8 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/superdashboard" class="nav-link">Home</a>
+        <router-link to="/dashboard" class="nav-link"> Dashboard </router-link>
+       
       </li>
 
     </ul>
@@ -86,20 +87,32 @@
               
               <li class="nav-item">
 
-                                         <router-link to="/user" class="nav-link">
+                                         <router-link to="/Players" class="nav-link">
 
 
 
 
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p> User Managments</p>
+                                            <p> Player Managments</p>
                                                             </router-link>
               </li>
 
               <li class="nav-item">
-                                           <router-link to="/changepwd" class="nav-link"> 
+
+                                         <router-link to="/Futsal_Admins" class="nav-link">
+
+
+
+
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p> Futsal Managments</p>
+                                                            </router-link>
+              </li>
+
+              <li class="nav-item">
+                                           <router-link to="/booking_managment" class="nav-link"> 
                                                   <i class="far fa-circle nav-icon"></i>
-                                                  <p>Change Password</p>
+                                                  <p>Booking Managment</p>
                                               </router-link>
               </li>
             </ul>
@@ -108,6 +121,26 @@
        </ul>
       </nav>
       <!-- /.sidebar-menu -->
+      <!-- bottom nav bar -->
+      <div class="nav-item-log mt-5 pb-2" style="width:235px; position: fixed; bottom:5%; overflow: hidden; ">
+              <a class="nav-link btn btn-primary " href="{{ url('index') }}">
+                   <i class="fas fa-reply mr-2 text-white "></i>
+                    <span style="color: white;">  HomePage</span>
+              </a>
+      </div>
+
+      <div class="nav-item-log mt-5 pb-2" style="width:235px; position: fixed; bottom:0; overflow: hidden; ">
+             <!--  logout  -->
+              <a class="nav-link btn btn-danger " href="{{ route('logout') }}"
+             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <i class="fas fa-reply mr-2 text-white "></i>
+                <span style="color: white;">  Logout</span>
+              </a>
+
+                   <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                     {{ csrf_field() }}
+                     </form>
+          </div>
     </div>
     <!-- /.sidebar -->
   </aside>

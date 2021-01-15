@@ -51,7 +51,7 @@
                 <br>- Database
                 <br>- Authentication
             </p>
-            <p style="  margin-right: .75rem; margin-left: .75rem;">
+            <p style="margin-right: .75rem; margin-left: .75rem;">
                 <a href="https://www.facebook.com/mhrz.rohit" target="_blank"><i class="fab fa-facebook-f pr-3"></i></a>
                 <a href="https://www.instagram.com/rohit.maharzan/" target="_blank"><i class="fab fa-instagram pr-3"></i></a>
                 <a href="http://rohitmaharjan61.com.np" target="_blank"><i class="fas fa-globe pr-3"></i></a>
@@ -163,6 +163,10 @@
 
 .members h3 {
   font-weight: 200;
+}
+
+.fa-facebook-f, .fa-instagram, .fa-globe{
+  color: #4B4B4B;
 }
 
 

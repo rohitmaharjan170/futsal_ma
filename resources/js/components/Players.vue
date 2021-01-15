@@ -1,10 +1,11 @@
 <template>
-  <div class="container">
+  <!-- @section('sub-title','Player Managment'); -->
+  <div class="container-fluid">
     <div class="row justify-content-center mt-2">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title text-blue">User Management</h3>
+            <h3 class="card-title text-blue">Player Management</h3>
             <div class="card-tools">
 
               <!-- static modal -->
@@ -19,27 +20,32 @@
 
             </div>
           </div>
-          
 
           <div class="card-body">
             <div class="card-body table-responsive p-0">
-              {{users.data}}
+              {{players.data}}
               <table class="table table-hover text-nowrap">
-                <thead>
+                <thead class ="thead-dark">
                   <tr>
-                    <th>User ID</th>
-                    <th>User Name</th>
+                    <th>ID</th>   
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Mobile</th>
                     <th>Email</th>
-                    <th>User Type</th>
+                    <th>Created at </th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="user in users" :key="user.id">
-                    <td>{{user.id}}</td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.usertype}}</td>
+                  <tr v-for="player in players" :key="player.p_sn">
+                    <td>{{player.p_sn}}</td>
+                    <td>{{player.p_first_name}}</td>
+                    <td>{{player.p_middle_name}}</td>
+                    <td>{{player.p_last_name}}</td>
+                    <td>{{player.p_mobile}}</td>
+                    <td>{{player.p_u_email}}</td>
+                    <td>{{player.created_at}}</td>
                     <td><i class="fa fa-edit text-blue" style="margin-right: 20%" > </i>
                       <i class="fa fa-trash text-red"></i></td>
                     </tr>
@@ -50,43 +56,6 @@
                   </tbody>
                 </table>
               </div>
-        <!--                 <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td><i class="fa fa-edit text-blue" style="margin-right: 20%" > </i>
-              <i class="fa fa-trash text-red"></i></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td><i class="fa fa-edit text-blue" style="margin-right: 20%"> </i>
-              <i class="fa fa-trash text-red"></i></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td><i class="fa fa-edit text-blue"style="margin-right: 20%"></i>
-              <i class="fa fa-trash text-red"></i></td>
-            </tr>
-          </tbody>
-        </table> -->
       </div>
     </div>
   </div>
@@ -162,22 +131,21 @@ export default {
   {
             // variable decleration insode return ok
             return{
-              users:{},
+              players:{},
 
                   // Create a new form instance
                   form: new Form({
-                    id:'',
-                    name: '',
-                    email:'',
-                    password: '',
-                    conpassword:'',
-                    usertype:''
-
-
+                    p_sn:'',
+                    p_first_name: '',
+                    p_middle_name: '',
+                    p_last_name: '',
+                    p_mobile:'',
+                    p_u_email:'',
+                    created_at: '',
                   })
                 }},
                 mounted(){
-                  this.retriveusers();
+                  this.retriveplayers();
                   
                 },
                 methods:{
@@ -185,16 +153,15 @@ export default {
                     $('#addnewuser').modal('show');
                   },
 
-                  retriveusers(){
-                    this.form.get('/api/userlist')
+                  retriveplayers(){
+                    this.form.get('/listplayer')
                     .then(
-                      ({data})=>(this.users=data)
+                      ({data})=>(this.players=data)
                       )
                     
-                  }
-                }
+                  },
+                },
 
               }
               </script>
-
 
