@@ -43,15 +43,15 @@
                 <tbody>
                   <tr v-for="futsal in futsals" :key="futsal.f_sn">
                     <td>{{futsal.f_sn}}</td>
-                    <td>{{futsal.f_name}}</td>
-                    <td>{{futsal.f_owner}}</td>
+                    <td>{{futsal.f_name | capitalize}}</td>
+                    <td>{{futsal.f_owner | capitalize}}</td>
                     <td>{{futsal.f_mobile}}</td>
                     <td>{{futsal.f_pan}}</td>
                     <td>{{futsal.f_u_email}}</td>
-                    <td>{{futsal.f_city}}, {{futsal.f_district}}</td>
+                    <td>{{futsal.f_city | capitalize}}, {{futsal.f_district | capitalize}}</td>
                     <td>{{futsal.f_lattitude}}</td>
                     <td>{{futsal.f_longitude}}</td>
-                    <td>{{futsal.created_at}}</td>
+                    <td>{{futsal.created_at | date('YYYY-MM-DD')}}</td>
                     <td><i class="fa fa-edit text-blue" style="margin-right: 20%" > </i>
                       <i class="fa fa-trash text-red"></i></td>
                     </tr>
@@ -160,6 +160,22 @@ export default {
                   this.retrivefutsals();
                   
                 },
+                filters: {
+                        capitalize: function (value) {
+                          if (!value) return ''
+                          value = value.toString()
+                          return value.charAt(0).toUpperCase() + value.slice(1)
+                        },
+
+                        date: function(str) {
+                              if (!str) { return '(n/a)'; }
+                              str = new Date(str);
+                              return str.getFullYear() + '-' + ((str.getMonth() < 9) ? '0' : '') + (str.getMonth() + 1) + '-' +
+                                ((str.getDate() < 10) ? '0' : '') + str.getDate();
+                            },
+
+                      },
+
                 methods:{
                   openmodal(){
                     $('#addnewuser').modal('show');

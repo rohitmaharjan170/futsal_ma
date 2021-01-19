@@ -38,6 +38,10 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
+    protected $table = 'users';
+    public $timestamps = true;
+    protected $primaryKey = 'id';
+
 // roles .php
     public function roles()
     {

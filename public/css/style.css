@@ -24,4 +24,6 @@
 
 }
 
-
+.capatilize{
+  text-transform: capitalize;
+}

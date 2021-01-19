@@ -12,6 +12,6 @@ class Role_User extends Model
 
     protected $table = 'role_user';
     public $timestamps = true;
-    protected $primaryKey = 'ru_id';
+    protected $primaryKey = 'user_id';
 
 }

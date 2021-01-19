@@ -16,7 +16,7 @@ class CreateTblFutsalAdminsTable extends Migration
         Schema::create('tbl_futsal_admins', function (Blueprint $table) {
             $table->increments('f_sn');
             $table->unsignedInteger('f_u_id');
-            $table->foreign('f_u_id')->references('id')->on('users');
+            $table->foreign('f_u_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('f_name');
             $table->string('f_owner');
             $table->bigInteger('f_mobile');

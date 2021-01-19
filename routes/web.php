@@ -61,6 +61,10 @@ Route::get('/futsaldashboard', 'FutsalAdminController@futsal_dashboard');
  Route::get('/superdashboard', 'SuperAdminController@master_admin');
 
 Route::get('/listplayer', 'SuperAdminController@listPlayers');
+Route::patch('/updateplayer/{p_u_id}', ['newplayer'=>'SuperAdminController@updatePlayer']);
+Route::delete('/deleteplayer/{p_u_id}', 'SuperAdminController@deletePlayer');
+
+
 Route::get('/listfutsal', 'SuperAdminController@listFutsals');
 
 

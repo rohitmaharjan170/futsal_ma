@@ -30,23 +30,25 @@
                 </div>
                 <br><br><br>
                 <div class="prof_name">
-                <h2>{{$currentPlayer->p_first_name}} {{$currentPlayer->p_middle_name}} {{$currentPlayer->p_last_name}}</h2>
-                <h4><i class="far fa-clock"></i>&nbsp; register date August6,2020</h4>
-                <div class="progress">
+                <h2 class="capatilize">{{$currentPlayer->p_first_name}} {{$currentPlayer->p_middle_name}} {{$currentPlayer->p_last_name}}</h2>
+                <h4><i class="far fa-clock"></i> Register date: {{$currentPlayer->created_at->format('d/m/Y')}}</h4>
+
+                <!-- profile Progress bar -->
+               <!--  <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
                     70%
                     </div>
 
-                </div>
+                </div> -->
                     </div>
                     <!--profile pic end-->
                     <!--dashboard-->
                     <div class="dashboard">
-                    <a href="" class="active"><i class="fa fa-bars"></i>&nbsp;&nbsp;Dashboard</a>
-                    <a href="">player information</a>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
+                    <i class="fa fa-bars"></i> Dashboard
+                    <a href="">Player Information</a>
+                    <a href="">Past Booking</a>
+                    <a href="">Gallery</a>
+                    <a href="">Past Tournaments</a>
                     </div>
             </div>
             <!--dashbaord end-->
@@ -76,34 +78,7 @@
         
       <!--another side end-->
     </div>
-</div>
-      <!--body end-->
-      <!--script-->
-      <script>
-        /*top-navbar navbar script*/
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      /*navabar script end*/
-      /*navbar script*/
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      /*navabar script end*/
-      </script>
-
-
-
+    </div>
 </div>
 
 

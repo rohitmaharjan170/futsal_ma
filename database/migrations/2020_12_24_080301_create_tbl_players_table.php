@@ -16,7 +16,7 @@ class CreateTblPlayersTable extends Migration
         Schema::create('tbl_players', function (Blueprint $table) {
             $table->increments('p_sn');
             $table->unsignedInteger('p_u_id');
-            $table->foreign('p_u_id')->references('id')->on('users');
+            $table->foreign('p_u_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('p_first_name');
             $table->string('p_middle_name')->nullable();
             $table->string('p_last_name');
