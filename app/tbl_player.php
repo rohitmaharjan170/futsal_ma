@@ -35,8 +35,16 @@ class tbl_player extends Model
     public $timestamps = true;
     protected $primaryKey = 'p_u_id';
 
+                                          // subin dai le sikako
+                                                    // protected $appends=['roles','user'];
 
-
+                                                    //  public function user()
+                                                    // {
+                                                    //     return $this
+                                                    //         ->belongsTo('App\User');  
+                                                    // }
+                                          //end subeain dai le sisakao
+    
     // public function User(){
     // return $this->belongsTo('App\User', 'u_id');
     // }

@@ -32,17 +32,6 @@
 
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3" >
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 
 </nav>
 
@@ -114,6 +103,30 @@
                                                   <i class="far fa-circle nav-icon"></i>
                                                   <p>Booking Managment</p>
                                               </router-link>
+              </li>
+            </ul>
+          </li>
+
+            <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tshirt"></i>
+              <p>
+             Pasal
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a> 
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+
+                                         <router-link to="/Jerseys" class="nav-link">
+
+
+
+
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p> Jersey Managments</p>
+                                                            </router-link>
               </li>
             </ul>
           </li>

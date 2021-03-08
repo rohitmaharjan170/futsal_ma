@@ -6,7 +6,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title text-blue">Player Management</h3>
+            <h3 class="card-title text-blue">Jersey Management</h3>
             <div class="card-tools">
 
                   <!-- SEARCH FORM -->
@@ -27,44 +27,44 @@
 
           <div class="card-body">
             <div class="card-body table-responsive p-0">
-              {{players.data}}
+              {{jerseys.data}}
               <table class="table table-hover text-nowrap">
                 <thead class ="thead-dark">
                   <tr>
-                    <th>ID</th>   
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Mobile</th>
-                    <th>Email</th>
-                    <th>Register Date </th>
+                    <th>SN</th>   
+                    <th>Jersey Name</th>
+                    <th>Jersey Code</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Image</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="player in players" :key="player.p_sn">
-                    <td>{{player.p_sn}}</td>
+                  <tr v-for="jersey in jerseys" :key="jersey.p_sn">
+                    <td>{{jersey.j_sn}}</td>
                     <td>
                         <input type="text" v-model="editForm.firstName" class="form-control" v-if="edit">
-                        <span v-else>{{player.p_first_name | capitalize}}</span>
+                        <span v-else>{{jersey.j_name | capitalize}}</span>
                     </td>
                     <td>
                         <input type="text" v-model="editForm.middleName" class="form-control" v-if="edit">
-                        <span v-else>{{player.p_middle_name  | capitalize}}</span>
+                        <span v-else>{{jersey.j_code  | capitalize}}</span>
                     </td>
                     <td>
                         <input type="text" v-model="editForm.lastName" class="form-control" v-if="edit">
-                        <span v-else>{{player.p_last_name | capitalize}}</span>
+                        <span v-else>{{jersey.j_size | capitalize}}</span>
                     </td>
-                    <td>{{player.p_mobile}}</td>
-                    <td>{{player.p_u_email}}</td>
-                    <td>{{player.created_at | date('YYYY-MM-DD')}}</td>
+                    <td>{{jersey.j_price}}</td>
+                    <td>{{jersey.j_stock}}</td>
+                    <td>{{jersey.j_img}}</td>
                     <td>
-                      <button type="button" v-on:click="editPlayer(player)" v-if="!edit"><i class="fa fa-edit text-blue"> </i></button>
+                      <button type="button" v-on:click="editPlayer(jersey)" v-if="!edit"><i class="fa fa-edit text-blue"> </i></button>
                       <button type="button" v-on:click="cancelEdit" v-if="edit"><i class="fa fa-edit text-blue"> Cancel</i></button>
-                      <button type="button" v-on:click="updatePlayer(player,editForm)" class="btn btn-primary" v-if="edit"><i class="fa fa-edit"> Update</i></button>
+                      <button type="button" v-on:click="updatePlayer(jersey,editForm)" class="btn btn-primary" v-if="edit"><i class="fa fa-edit"> Update</i></button>
 
-                      <button type="button" v-on:click="deletePlayer(player)" v-if="!edit"><i class="fa fa-trash text-red"></i></button>
+                      <button type="button" v-on:click="deletePlayer(jersey)" v-if="!edit"><i class="fa fa-trash text-red"></i></button>
                     </td>
                     </tr>
 
@@ -131,28 +131,31 @@ export default {
   {
             // variable decleration insode return ok
             return{
-              players:{},
+              jerseys:{},
 
                   // Create a new form instance
                   form: new Form({
-                    p_sn:'',
-                    p_first_name: '',
-                    p_middle_name: '',
-                    p_last_name: '',
-                    p_mobile:'',
-                    p_u_email:'',
-                    created_at: '',
+                    j_sn:'',
+                    j_name: '',
+                    j_code: '',
+                    j_size: '',
+                    j_price:'',
+                    j_stock:'',
+                    j_img: '',
                   }),
 
                   edit:false,
                   editForm:{
-                              firstName:'',
-                              middleName:'',
-                              lastName:'',
+                              name:'',
+                              code:'',
+                              size:'',
+                              price:'',
+                              stock:'',
+                              img:'',
                           }
                 }},
                 mounted(){
-                  this.retriveplayers();
+                  this.retrivejerseys();
                   
                 },
                 filters: {
@@ -161,24 +164,16 @@ export default {
                           value = value.toString()
                           return value.charAt(0).toUpperCase() + value.slice(1)
                         },
-
-                        date: function(str) {
-                              if (!str) { return '(n/a)'; }
-                              str = new Date(str);
-                              return str.getFullYear() + '-' + ((str.getMonth() < 9) ? '0' : '') + (str.getMonth() + 1) + '-' +
-                                ((str.getDate() < 10) ? '0' : '') + str.getDate();
-                            },
-
                       },
                 methods:{
                   openEditModal(player, index){
                     $('#playerEditModal').modal('show');
                   },
 
-                  retriveplayers(){
-                    this.form.get('/listplayer')
+                  retrivejerseys(){
+                    this.form.get('/listjersey')
                     .then(
-                      ({data})=>(this.players=data)
+                      ({data})=>(this.jerseys=data)
                       )
                   },
 
@@ -192,49 +187,40 @@ export default {
                   //       })
                   //   },
 
-                  deletePlayer(player)
+                  deleteJersey(jersey)
                   {
                     if(confirm("Do you really want to delete?"))
                     {
-                      this.form.delete("/deleteplayer/"+player.p_u_id).then(response => {
+                      this.form.delete("/deleteplayer/"+jersey.j_sn).then(response => {
 
-                        this.retriveplayers();
+                        this.retrivejerseys();
 
                       });
                     }
                   },
 
-                  editPlayer(player){
+                  editJersey(jersey){
                     this.edit=true;
                     // console.log(player.p_u_id);
-                    if(player.p_sn){
-                        this.editForm.firstName=player.p_first_name;
-                        this.editForm.middleName=player.p_middle_name;
-                        this.editForm.lastName=player.p_last_name;
-                      }
+                    if(jersey.p_sn){
+                        this.editForm.name=player.p_first_name;
+                        }
                   },
 
                   cancelEdit(){
                     this.edit=false;
-                    this.editForm.firstName='';
-                    this.editForm.middleName='';
-                    this.editForm.lastName='';
-                  },
+                    this.editForm.name='';
+                    },
 
-                  updatePlayer(oldplayer, newplayer){
+                  updatePlayer(oldjersey, newjersey){
                     // console.log(newplayer);
-                    if(newplayer.firstName == ""){
-                      newplayer.firstName = '-'
+                    if(newplayer.name == ""){
+                      newplayer.name = '-'
                     }
-                    if(newplayer.lastName == ""){
-                      newplayer.lastName = '-'
-                    }
-                    if(newplayer.middleName == ""){
-                      newplayer.middleName = '-'
-                    }
-                    this.form.patch("/updateplayer/"+oldplayer.p_u_id+"/"+newplayer.firstName+"/"+newplayer.lastName+"/"+newplayer.middleName).then(response=>{
+
+                    this.form.patch("/updatejersey/"+oldjersey.j_sn+"/"+newjersey.name).then(response=>{
                       this.cancelEdit();
-                       this.retriveplayers();
+                       this.retrivejerseys();
                     })
                   },
 

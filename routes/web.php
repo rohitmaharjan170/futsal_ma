@@ -33,6 +33,7 @@ Route::get('/index', 'HomeController@index'); //->middleware('verified')
 Route::view('/aboutus', 'master_index/about_us');
 Route::view('/contactus', 'master_index/contact_us');
 
+
 // player routes
 	//register player routes
 Route::post('/registerplayer', 'Registers\PlayerRegisterController@store_player')->name('player_register');
@@ -61,12 +62,16 @@ Route::get('/futsaldashboard', 'FutsalAdminController@futsal_dashboard');
  Route::get('/superdashboard', 'SuperAdminController@master_admin');
 
 Route::get('/listplayer', 'SuperAdminController@listPlayers');
-Route::patch('/updateplayer/{p_u_id}', ['newplayer'=>'SuperAdminController@updatePlayer']);
+Route::match(['put', 'patch'],'/updateplayer/{p_u_id}/{firstName}/{lastName}/{middleName}', 'SuperAdminController@updatePlayer');
 Route::delete('/deleteplayer/{p_u_id}', 'SuperAdminController@deletePlayer');
 
 
 Route::get('/listfutsal', 'SuperAdminController@listFutsals');
 
 
+// jersey 
+Route::resource('/pasal', 'JerseyController');
 
- 
+Route::get('/listjersey', 'JerseyController@listJerseys');
+Route::match(['put', 'patch'],'/updatejersey/{j_sn}/{name}', 'JerseyController@updateJersey');
+Route::delete('/deletejersey/{j_sn}', 'JerseyController@deleteJersey');

@@ -44,22 +44,26 @@ class SuperAdminController extends Controller
 
         return $players;
     }
-    public function updatePlayer(Request $request, $p_u_id){
-        $player = tbl_player::find($p_u_id);
-        $player->update($request->all());
+    public function updatePlayer($p_u_id, $firstName, $lastName, $middleName){
+        // return p_u_id;
+       if($firstName == "-") {
+            $firstName = NULL;
+        }
+        if($lastName == "-") {
+            $lastName = NULL;
+        }
+        if($middleName == "-") {
+            $middleName = NULL;
+        }
+        
+        tbl_player::where('p_u_id', $p_u_id)->update(array('p_first_name' => $firstName,'p_last_name' => $lastName, 'p_middle_name' => $middleName));
+
         return response()->json(['message'=>'Player have been updated successfully !!']);
 
     }
     public function deletePlayer($p_u_id){
       
-         tbl_player::destroy($p_u_id);
-
-        $currentRoleUser = Role_User::where('user_id', $p_u_id)->first(); 
-        if($currentRoleUser) {
-            Role_User::destroy($currentRoleUser->user_id);
-        }
-
-        $currentUser = User::where('id', $p_u_id)->first(); 
+       $currentUser = User::where('id', $p_u_id)->first(); 
          // dd($currentUser->id);
         if($currentUser) {
             User::destroy($currentUser->id);

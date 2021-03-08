@@ -41,6 +41,10 @@ let routes=[
 		path:'/booking_managment',
 		component: require('./components/booking_managment.vue').default
 	},
+	{
+		path:'/Jerseys',
+		component: require('./components/Jerseys.vue').default
+	},
 
 ]
 
